@@ -1,0 +1,96 @@
+{
+  "seo_title": "About | The Director's Vision",
+  "hero": {
+    "label": "Behind the vision",
+    "headline": "The vision existed *before the company did.*",
+    "text": "The Director's Vision is a faith-led business operations company. We exist to help founders execute and sustain the business God has placed on their heart.",
+    "image": "/images/05-about-hero-benae.jpg",
+    "image_alt": "Benae Cox, founder of The Director's Vision, laughing mid-conversation",
+    "corner_label": "TDV · Origin story",
+    "caption": "Benae Cox, Founder & Director"
+  },
+  "ticker": ["Our story", "Our mission", "Our beliefs", "Our cast & crew", "Faith-led", "Founder-focused"],
+  "story": {
+    "label": "The story",
+    "headline": "It didn't start as a niche. *It started as a calling.*",
+    "quote": "\"TDV can do the work. God provides the increase.\"",
+    "image": "/images/06-about-behind-the-vision.jpg",
+    "image_alt": "A coffee cup, phone tripod, and laptop set up by a window",
+    "image_label": "Behind the vision",
+    "lead": "Benae Cox had long envisioned owning a business where she could lead a team while helping other business owners build what they had envisioned for themselves.",
+    "paragraphs": [
+      "Through her earlier entrepreneurial work, starting in social media marketing, she discovered she was most drawn to what happened behind the business: the planning, the organizing, the structure, and turning ideas into something real and executable.",
+      "TDV began during a season when starting a business didn't necessarily make sense on paper. In the middle of an incredibly difficult personal season, Benae believed God was telling her it was time. So she did.",
+      "As the company took shape, she saw a recurring gap, especially within the Black business community. There was tremendous encouragement to start businesses, but far less accessible support for what it takes to sustain them and make them run well.",
+      "Founders were told to start, market, sell, and grow. But once the business became real, the questions changed. How do I make this easier to manage? How do I stop everything from depending on me? How do I build a business that can actually support where I want to go?",
+      "That's where the mission was born."
+    ]
+  },
+  "mission": {
+    "label": "The mission",
+    "statement": "We exist to help founders execute and sustain the business God has placed on their heart, through structure and hands-on support.",
+    "points": [
+      {"label": "Execute", "text": "Turning the vision into something real, organized, and moving."},
+      {"label": "Sustain", "text": "Building it so it lasts. A business that keeps serving, keeps growing, and keeps supporting the life you want, without requiring more and more of you to hold it together."},
+      {"label": "Our vision", "text": "To build a trusted, faith-led house of business support, led by Benae and powered by a team of specialists, where founders can access the strategy, operations, resources, and implementation they need at every stage."}
+    ]
+  },
+  "beliefs": {
+    "label": "Our core beliefs",
+    "headline": "What we believe about *building a business.*",
+    "intro": "These shape every recommendation we make and every system we build.",
+    "items": [
+      {"title": "Starting is not the same as sustaining.", "text": "A business can launch and attract customers without the operational foundation it needs to sustain growth."},
+      {"title": "A God-given vision deserves to be executed with intention.", "text": "What was placed on your heart should be stewarded with structure, not left to survive on memory, sticky notes, and late nights."},
+      {"title": "Bigger does not automatically mean better.", "text": "Revenue, clients, team size, and visibility aren't enough on their own to define a healthy business."},
+      {"title": "Growth should make a business better to run, not harder.", "text": "As you grow, your role should change rather than the work depending on you more and more."},
+      {"title": "Support shouldn't wait until you've \"made it.\"", "text": "Founders often need strategic support while they're still building the infrastructure that gets them to the next stage."},
+      {"title": "Good operations make business feel simpler.", "text": "Complexity may exist behind the scenes, but you, your team, and your customers should experience clarity."},
+      {"title": "There is no single correct version of success.", "text": "The business you're building should support the life and vision you actually want."},
+      {"title": "Information and implementation are different.", "text": "Knowing what should happen isn't the same as having the strategy, structure, and support to make it happen."},
+      {"title": "Faith and ambition can coexist.", "text": "We work diligently, steward opportunities well, and trust God with the outcomes we can't control."}
+    ]
+  },
+  "founder": {
+    "label": "Director's note",
+    "name": "Benae Cox",
+    "title": "Founder & CEO",
+    "image": "/images/07-about-meet-the-founder.jpg",
+    "image_alt": "Benae Cox smiling at an outdoor table",
+    "image_label": "Director's chair",
+    "quote": "\"I started in social media marketing and realized the part I loved most was organizing the strategy, offers, workflows, and systems around the creative work.\"",
+    "paragraphs": [
+      "Benae leads TDV the way a director leads a film: holding the vision, casting the right people in the right roles, and making sure every detail is executed with intention. She believes her responsibility is to steward the vision, to prepare, build, execute, serve, and lead with excellence, and to trust God with the increase."
+    ]
+  },
+  "crew": {
+    "label": "Cast & crew",
+    "headline": "A growing house of *business support.*",
+    "text": "TDV is bigger than one person. Every client is paired with a dedicated operations partner, and every engagement carries the same standard of care, structure, and follow-through.",
+    "credits": [
+      {"role": "Starring", "name": "*You, the founder*", "note": "The visionary behind the business"},
+      {"role": "Directed by", "name": "Benae Cox", "note": "Founder & CEO"},
+      {"role": "Specialists", "name": "*Now casting*", "note": "Strategy, systems, marketing, and implementation support"},
+      {"role": "Produced with", "name": "*Faith & intention*", "note": ""}
+    ],
+    "button": "Work with us",
+    "button_2": "Join the crew"
+  },
+  "traits": {
+    "label": "How we show up",
+    "headline": "Like a knowledgeable friend who can see the *bigger picture.*",
+    "items": [
+      {"title": "Grounded", "text": "We don't glamorize entrepreneurship."},
+      {"title": "Warm", "text": "You should feel supported, never judged."},
+      {"title": "Strategic", "text": "Every recommendation has reasoning behind it."},
+      {"title": "Practical", "text": "We focus on what you can actually do."},
+      {"title": "Thoughtful", "text": "We question assumptions instead of repeating popular advice."},
+      {"title": "Faith-led", "text": "Genuine and integrated, never performative."}
+    ]
+  },
+  "closing": {
+    "label": "Your next step",
+    "headline": "God gave you the vision. *You don't have to carry it alone.*",
+    "button": "Start the conversation"
+  }
+}

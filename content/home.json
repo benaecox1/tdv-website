@@ -1,0 +1,95 @@
+{
+  "seo_title": "The Director's Vision | Faith-led operations support for founders",
+  "hero": {
+    "label": "Welcome",
+    "headline": "The vision is yours. *The weight doesn't have to be.*",
+    "text": "We help founders execute and sustain the business God placed on their heart, through structure and hands-on support. Founded by Benae Cox and powered by a team of dedicated operations partners.",
+    "button": "Start the conversation",
+    "button_2": "Explore our services",
+    "scripture": "\"Write the vision, and make it plain.\"",
+    "scripture_ref": "Habakkuk 2:2",
+    "image": "/images/01-home-hero-benae.jpg",
+    "image_alt": "Benae Cox, founder of The Director's Vision, smiling at an outdoor table",
+    "caption": "Benae Cox, Founder",
+    "caption_2": "& the TDV team",
+    "corner_label": "TDV · Est. 2026"
+  },
+  "ticker": ["Execute", "Sustain", "Faith-led", "Founder-focused", "Strategy", "Support", "Implementation", "The vision is yours"],
+  "founder": {
+    "label": "The founder we serve",
+    "quote": "\"I know how to run my business. I just don't want to keep running it like this.\"",
+    "text": "You're already serving clients, bringing in revenue, and keeping everything moving. The business works. It just takes far more of you than it should to keep it working."
+  },
+  "familiar": {
+    "label": "Sound familiar?",
+    "headline": "You're past the idea stage. These are the questions now.",
+    "image": "/images/02-home-sound-familiar.jpg",
+    "image_alt": "A laptop, an iced coffee, and a gold-foil journal on a window-side table",
+    "questions": [
+      "How do I get everything out of my head?",
+      "Why am I constantly working but still feel behind?",
+      "Do I actually need to hire, or do I need a better process?",
+      "How do I serve more clients without creating more work for myself?",
+      "What should I automate, and what should stay personal?",
+      "How do I grow without the business requiring more and more of me?"
+    ]
+  },
+  "gap": {
+    "label": "The gap we close",
+    "headline": "Starting is not the same as sustaining.",
+    "text": "Founders get plenty of advice about starting, marketing, selling, and scaling. There's far less support for executing the vision day to day and building the operations that hold it up. That's where we come in.",
+    "before": "A business that works because *you* keep it working.",
+    "after": "A business intentionally built to run well and *sustain growth.*"
+  },
+  "services_ticker_label": "Services offered",
+  "help": {
+    "label": "How we help",
+    "headline": "Not a VA. Not a takeover. *A partner who works alongside you.*",
+    "text": "You stay in charge of your business. We bring the strategy, the structure, and the hands-on support, so you don't have to figure everything out alone.",
+    "image": "/images/03-home-how-we-help-benae.jpg",
+    "image_alt": "Benae Cox laughing mid-conversation",
+    "image_label": "Behind the vision"
+  },
+  "schedule": {
+    "label": "Working together",
+    "headline": "The production schedule.",
+    "text": "Every great production runs on a clear plan. We help figure out what your business needs, then we help put it in place and keep it running.",
+    "steps": [
+      {"stage": "Pre-production", "title": "The conversation", "text": "We talk through what's working, what's stuck, and what's taking more of you than it should. Then we decide what matters most.", "tags": "Understand • Decide"},
+      {"stage": "Production", "title": "Build the foundation", "text": "Your operations partner builds the systems, workflows, and structure your business needs, shaped around how you already work.", "tags": "Build • Implement"},
+      {"stage": "The run", "title": "Run it together", "text": "We stay hands-on with the day-to-day, keeping things moving so you can focus on clients and the life you're building.", "tags": "Maintain"}
+    ]
+  },
+  "note": {
+    "label": "Director's note",
+    "headline": "Your business is the story. *We help you direct it.*",
+    "text": "A director doesn't play every role. She holds the vision, puts the right people in the right places, and makes sure every detail is executed with intention. That's how we lead TDV, and it's how we help you lead your business.",
+    "button": "Meet the director",
+    "button_2": "See the full credits",
+    "image": "/images/04-home-directors-desk.jpg",
+    "image_alt": "A navy-paneled office with a desk, leather journal, and gold pen",
+    "image_label": "The director's desk",
+    "credits": [
+      {"role": "Starring", "name": "You"},
+      {"role": "Directed by", "name": "Benae Cox"},
+      {"role": "Operations by", "name": "The TDV team"}
+    ]
+  },
+  "review": {
+    "show": false,
+    "label": "Reviews",
+    "quote": "",
+    "name": "",
+    "business": ""
+  },
+  "scripture": {
+    "quote": "\"Two are better than one, because they have a good return for their labor.\"",
+    "ref": "Ecclesiastes 4:9"
+  },
+  "closing": {
+    "label": "Your next step",
+    "headline": "You already had the courage to start it. *Now let's build it into what you know it can be.*",
+    "text": "Tell us where things stand. We'll talk through what your business needs and whether we're the right fit.",
+    "button": "Start the conversation"
+  }
+}

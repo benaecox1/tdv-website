@@ -1,0 +1,96 @@
+{
+  "seo_title": "Services | The Director's Vision",
+  "ticker": ["Services offered", "Strategy", "Support", "Implementation", "Pricing shared after your discovery call"],
+  "hero": {
+    "label": "Services",
+    "headline": "Support for every stage of *executing and sustaining* your business.",
+    "text": "We sit between DIY business education and high-cost consulting. You get strategy, support, and implementation, shaped around what your business actually needs.",
+    "panel_label": "The shot list",
+    "shot_list": ["Understand", "Decide", "Build", "Implement", "Maintain"],
+    "panel_note": "The first three help you execute. The last two help you sustain."
+  },
+  "lineup_label": "The lineup",
+  "services": [
+    {
+      "title": "Operational Strategy & Planning",
+      "short_name": "Strategy & planning",
+      "text": "For when you know something needs to change but aren't sure where to start. We look at how the business really runs and help you decide what matters most right now.",
+      "includes": ["A clear look at where work gets stuck and why", "Priorities and an operational roadmap", "Guidance on hiring, tools, and what to automate"],
+      "featured": false,
+      "featured_label": ""
+    },
+    {
+      "title": "Workflows, SOPs & Documentation",
+      "short_name": "Workflows & SOPs",
+      "text": "Get everything out of your head and into a process that runs the same way every time, whether you're in the room or not.",
+      "includes": ["Workflow mapping for your core processes", "Standard operating procedures your team can follow", "Documentation that makes delegation possible"],
+      "featured": false,
+      "featured_label": ""
+    },
+    {
+      "title": "CRM & Systems Setup",
+      "short_name": "CRM & systems",
+      "text": "Tools set up around how you actually work, not the other way around. Then training so they stick.",
+      "includes": ["CRM and project management setup, including ClickUp and HoneyBook", "Cleaning up and connecting the tools you already pay for", "Training for you and your team"],
+      "featured": false,
+      "featured_label": ""
+    },
+    {
+      "title": "Client Experience & Onboarding",
+      "short_name": "Client experience",
+      "text": "What happens after someone pays you says a lot about your business. We help you create an experience that feels consistent and cared for, every single time.",
+      "includes": ["Client journey mapping from inquiry to offboarding", "Onboarding flows, welcome materials, and touchpoints", "Fewer dropped balls and repeated questions"],
+      "featured": false,
+      "featured_label": ""
+    },
+    {
+      "title": "Project & Team Support",
+      "short_name": "Project & team support",
+      "text": "Coordination for the projects, deadlines, and people that keep your business moving, so nothing depends on you remembering it.",
+      "includes": ["Project planning and timeline management", "Contractor and team coordination", "Support with hiring and onboarding new help"],
+      "featured": false,
+      "featured_label": ""
+    },
+    {
+      "title": "Ongoing Operations Partnership",
+      "short_name": "Operations partnership",
+      "text": "A dedicated TDV operations partner working alongside you week to week. We carry the day-to-day operational load, keep systems running, and help you make decisions as the business grows.",
+      "includes": ["Day-to-day operations and coordination", "Ongoing maintenance of your systems and processes", "A thinking partner for what to focus on next"],
+      "featured": true,
+      "featured_label": "Most hands-on"
+    }
+  ],
+  "investment": {
+    "label": "Investment",
+    "headline": "Every business is built differently. *So is every engagement.*",
+    "text": "We don't believe in one-size-fits-all packages. Pricing is tailored to your business, your stage, and the level of support you need, and it's shared after your discovery conversation.",
+    "button": "Inquire about pricing"
+  },
+  "process": {
+    "label": "The production schedule",
+    "headline": "From first message to *real support.*",
+    "steps": [
+      {"title": "Reach out", "text": "Share a little about your business and what's feeling heavy."},
+      {"title": "Discovery conversation", "text": "We talk through what's working, what's stuck, and what you want the business to become."},
+      {"title": "Your recommendation", "text": "A tailored plan for the support that fits, with clear investment details."},
+      {"title": "Meet your partner", "text": "You're paired with a dedicated TDV operations partner, and the work begins."}
+    ]
+  },
+  "faq": {
+    "label": "Questions",
+    "headline": "Good to know.",
+    "items": [
+      {"question": "Is this a virtual assistant service?", "answer": "No. A VA takes tasks off your list. We help you build and run the operations behind your business: the strategy, structure, systems, and hands-on support that make it easier to run and built to last."},
+      {"question": "Who will I be working with?", "answer": "Every client is paired with a dedicated TDV operations partner. Depending on your needs, that may be Benae or another member of our team. Every engagement is guided by the same approach and standards."},
+      {"question": "Does my business need to be a certain size?", "answer": "No. Support shouldn't only be available once you've \"made it.\" If you're past the idea stage, serving clients, and ready for the business to feel easier to run, we should talk."},
+      {"question": "Will you take over my business?", "answer": "Never. The vision is yours and so are the decisions. We work alongside you so you don't have to carry it all alone."},
+      {"question": "How is pricing determined?", "answer": "Based on your business, your goals, and the level of support you need. We share investment details after your discovery conversation, once we understand what would actually help."}
+    ]
+  },
+  "closing": {
+    "label": "Your next step",
+    "headline": "Not sure where you fit? *That's what the first conversation is for.*",
+    "text": "Tell us where things stand and we'll help you figure out what your business needs next.",
+    "button": "Start the conversation"
+  }
+}
