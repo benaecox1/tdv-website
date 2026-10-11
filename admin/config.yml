@@ -1,7 +1,7 @@
 # TDV website dashboard settings
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/tdv-website
+  repo: benaecox1/tdv-website
   branch: main
   commit_messages:
     update: "Update {{slug}} from the dashboard"
