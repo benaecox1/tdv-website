@@ -170,7 +170,7 @@ ${NAV.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}
 </div>
 <div class="foot foot-col">
 <p class="eyebrow light" style="margin:0 0 8px">Connect</p>
-${S.instagram ? `<a href="${esc(S.instagram)}" target="_blank" rel="noopener">Instagram</a>` : ''}${S.linkedin ? `<a href="${esc(S.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}<a href="${esc(emailHref)}">${esc(emailText)}</a>
+${S.instagram ? `<a href="${esc(S.instagram)}" target="_blank" rel="noopener">Instagram</a>` : ''}${S.linkedin ? `<a href="${esc(S.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}
 </div>
 <div class="foot foot-col">
 <p class="eyebrow light" style="margin:0 0 8px">${key === 'contact' ? 'Based in' : 'On location'}</p>
