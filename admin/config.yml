@@ -327,9 +327,44 @@ collections:
               - {label: "Headline", name: headline, widget: string, hint: *headline}
               - {label: "Button text", name: button, widget: string}
 
+      # ---------------- START THE CONVERSATION ----------------
+      - name: start
+        label: Start the conversation page
+        file: content/start.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - {label: "Running line at the top (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "Top section"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Show the booking status line", name: show_status, widget: boolean, default: false}
+              - {label: "Booking status line", name: status, widget: string, required: false}
+              - {label: "Scripture", name: scripture, widget: text, required: false}
+              - {label: "Scripture reference", name: scripture_ref, widget: string, required: false}
+              - {label: "Background photo", name: image, widget: image, hint: "A wide photo works best. The left side gets darkened so the words stay readable."}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Top-right corner label", name: corner_label, widget: string}
+          - label: "Form box"
+            name: form
+            widget: object
+            hint: "Your discovery call form goes in Site settings > Discovery call form. The backup fields below are only used if that box is empty."
+            fields:
+              - {label: "Small label", name: label, widget: string, required: false}
+              - {label: "Heading", name: heading, widget: string, required: false, hint: "Stars make words gold italic. Leave empty to hide."}
+              - {label: "Backup form: 'How long in business' choices", name: stage_options, widget: list, field: {label: Choice, name: choice, widget: string}}
+              - {label: "Backup form: extra checkbox after the services", name: extra_interest, widget: string}
+              - {label: "Backup form: hint inside the big text box", name: heavy_placeholder, widget: string}
+              - {label: "Backup form: 'How did you hear about us' choices", name: heard_options, widget: list, field: {label: Choice, name: choice, widget: string}}
+              - {label: "Backup form: button text", name: button, widget: string}
+
       # ---------------- CONTACT ----------------
       - name: contact
-        label: Contact page
+        label: Contact page (general questions)
         file: content/contact.json
         fields:
           - {label: "Browser tab title", name: seo_title, widget: string}
@@ -342,34 +377,31 @@ collections:
               - {label: "Small label", name: label, widget: string}
               - {label: "Headline", name: headline, widget: string, hint: *headline}
               - {label: "Paragraph", name: text, widget: text}
-              - {label: "Show the booking status line", name: show_status, widget: boolean, default: true}
+              - {label: "Show the booking status line", name: show_status, widget: boolean, default: false}
               - {label: "Booking status line", name: status, widget: string, required: false}
               - {label: "Scripture", name: scripture, widget: text, required: false}
               - {label: "Scripture reference", name: scripture_ref, widget: string, required: false}
-              - {label: "Background photo", name: image, widget: image, hint: "A wide photo, dark on the left so the words stay readable."}
+              - {label: "Background photo", name: image, widget: image, hint: "A wide photo works best. The left side gets darkened so the words stay readable."}
               - {label: "Photo description", name: image_alt, widget: string}
               - {label: "Top-right corner label", name: corner_label, widget: string}
-          - label: "Inquiry form"
+          - label: "Message form"
             name: form
             widget: object
-            hint: "The service checkboxes come from the Services page automatically."
+            hint: "If you add your HoneyBook contact form in Site settings, it replaces this form. The label and heading still show above it."
             fields:
-              - {label: "'How long in business' choices", name: stage_options, widget: list, field: {label: Choice, name: choice, widget: string}}
-              - {label: "Extra checkbox after the services", name: extra_interest, widget: string}
-              - {label: "Hint inside the big text box", name: heavy_placeholder, widget: string}
-              - {label: "'How did you hear about us' choices", name: heard_options, widget: list, field: {label: Choice, name: choice, widget: string}}
+              - {label: "Small label", name: label, widget: string, required: false}
+              - {label: "Heading", name: heading, widget: string, required: false, hint: "Stars make words gold italic. Leave empty to hide."}
+              - {label: "'What's this about?' choices", name: topics, widget: list, hint: "Remove them all to hide this question.", field: {label: Choice, name: choice, widget: string}}
+              - {label: "Hint inside the message box", name: message_placeholder, widget: string, required: false}
               - {label: "Button text", name: button, widget: string}
-              - {label: "Small label above your embedded form", name: embed_label, widget: string, required: false, default: "Discovery call form"}
-              - {label: "Heading above your embedded form", name: embed_heading, widget: string, required: false, default: "Tell us where things *stand.*", hint: "Only shows when you use your own form. Stars make words gold italic. Leave empty to hide."}
           - label: "Navy panel"
             name: panel
             widget: object
             fields:
-              - {label: "Label", name: label, widget: string}
-              - {label: "Steps", name: steps, widget: list, field: {label: Step, name: step, widget: text}}
-              - {label: "Label above the booking button", name: book_label, widget: string}
-              - {label: "Booking button text", name: book_button, widget: string, hint: "The link comes from Site settings > Calendar booking link."}
-          - label: "Thank-you page (after someone sends the form)"
+              - {label: "Label", name: book_label, widget: string}
+              - {label: "Short note", name: book_text, widget: text, required: false}
+              - {label: "Button text (goes to Start the conversation page)", name: book_button, widget: string}
+          - label: "Thank-you page (after someone sends a form)"
             name: thanks
             widget: object
             fields:
@@ -406,9 +438,10 @@ collections:
         file: content/settings.json
         fields:
           - {label: "Business email", name: email, widget: string, required: false, hint: "Shows in the footer, Contact page, and legal pages."}
-          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Paste your form's share link, or the embed code your form tool gives you. It replaces the form on the Contact page. Leave empty to use the built-in form."}
+          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Paste your form's share link, or the embed code your form tool gives you. It shows on the Start the conversation page. Leave empty to use the built-in form."}
           - {label: "Form height in pixels (link only)", name: discovery_form_height, widget: string, required: false, hint: "Only used with a link. Default is 1100. Make it bigger if your form gets cut off, smaller if there's empty space."}
-          - {label: "Calendar booking link", name: calendar_link, widget: string, required: false, hint: "Paste your Calendly, HoneyBook, or Google booking link. Leave empty to send people to the form."}
+          - {label: "General contact form (link or embed code)", name: contact_form, widget: text, required: false, hint: "Your HoneyBook contact form. Paste its link or embed code. It shows on the Contact page. Leave empty to use the built-in message form."}
+          - {label: "Contact form height in pixels (link only)", name: contact_form_height, widget: string, required: false, hint: "Only used with a link. Default is 900."}
           - {label: "Reply time in business days", name: reply_days, widget: string, required: false, hint: "Just the number, like 2. Leave empty to hide the line."}
           - {label: "Instagram link", name: instagram, widget: string, required: false}
           - {label: "LinkedIn link", name: linkedin, widget: string, required: false}

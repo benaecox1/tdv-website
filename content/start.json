@@ -1,0 +1,42 @@
+{
+  "seo_title": "Start the Conversation | The Director's Vision",
+  "ticker": [
+    "Now booking discovery calls",
+    "Your next chapter starts here",
+    "The vision is yours",
+    "Faith-led",
+    "Founder-focused"
+  ],
+  "hero": {
+    "label": "Start the conversation",
+    "headline": "Let's talk about what your business *needs next.*",
+    "text": "Tell us a little about where things stand. There's no pressure and no wrong answer. This is just the start of a conversation.",
+    "status": "Now booking discovery calls",
+    "show_status": true,
+    "scripture": "",
+    "scripture_ref": "",
+    "image": "/images/08-contact-hero-background.jpg",
+    "image_alt": "A gold vintage telephone handset hanging against a navy wall",
+    "corner_label": "TDV · Est. 2026"
+  },
+  "form": {
+    "label": "Discovery call form",
+    "heading": "Tell us where things *stand.*",
+    "stage_options": [
+      "Less than a year",
+      "1 to 3 years",
+      "3 to 5 years",
+      "5+ years"
+    ],
+    "extra_interest": "Not sure yet",
+    "heavy_placeholder": "The more specific, the better. What would feel different if this were handled?",
+    "heard_options": [
+      "Instagram",
+      "LinkedIn",
+      "Referral from a friend or client",
+      "Google",
+      "Other"
+    ],
+    "button": "Send my inquiry"
+  }
+}

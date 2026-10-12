@@ -1,12 +1,18 @@
 {
   "seo_title": "Contact | The Director's Vision",
-  "ticker": ["Now booking discovery calls", "Your next chapter starts here", "The vision is yours", "Faith-led", "Founder-focused"],
+  "ticker": [
+    "Get in touch",
+    "Questions welcome",
+    "The vision is yours",
+    "Faith-led",
+    "Founder-focused"
+  ],
   "hero": {
-    "label": "Your next chapter",
-    "headline": "Let's talk about what your business *needs next.*",
-    "text": "Tell us a little about where things stand. There's no pressure and no wrong answer. This is just the start of a conversation.",
+    "label": "Get in touch",
+    "headline": "We'd love to *hear from you.*",
+    "text": "Have a question, a partnership idea, or just want to say hello? Send us a note and we'll get back to you.",
     "status": "Now booking discovery calls",
-    "show_status": true,
+    "show_status": false,
     "scripture": "\"Two are better than one, because they have a good return for their labor.\"",
     "scripture_ref": "Ecclesiastes 4:9",
     "image": "/images/08-contact-hero-background.jpg",
@@ -14,24 +20,25 @@
     "corner_label": "TDV · Est. 2026"
   },
   "form": {
-    "stage_options": ["Less than a year", "1 to 3 years", "3 to 5 years", "5+ years"],
-    "extra_interest": "Not sure yet",
-    "heavy_placeholder": "The more specific, the better. What would feel different if this were handled?",
-    "heard_options": ["Instagram", "LinkedIn", "Referral from a friend or client", "Google", "Other"],
-    "button": "Send my inquiry"
+    "label": "Send a message",
+    "heading": "How can we *help?*",
+    "topics": [
+      "A general question",
+      "Working with TDV",
+      "Partnerships or speaking",
+      "Joining the team",
+      "Something else"
+    ],
+    "message_placeholder": "Tell us a little about what's on your mind.",
+    "button": "Send message"
   },
   "panel": {
-    "label": "The production schedule",
-    "steps": [
-      "We read your inquiry and get a feel for where your business is.",
-      "We reach out to schedule a discovery conversation.",
-      "You get a tailored recommendation, including investment details."
-    ],
     "book_label": "Prefer to book directly?",
+    "book_text": "Ready to talk about working together? Start with our discovery call form.",
     "book_button": "Book a discovery call"
   },
   "thanks": {
-    "headline": "Thank you. *Your inquiry is in.*",
-    "text": "We read every message personally. Expect to hear from us soon about scheduling a discovery conversation."
+    "headline": "Thank you. *Your message is in.*",
+    "text": "We read every message personally and will be in touch soon."
   }
 }

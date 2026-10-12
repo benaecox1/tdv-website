@@ -140,6 +140,9 @@ a{color:#101C3C}a:hover{color:#8A5A1C}
 .p-contact .c-hero .vf{top:28px;left:28px;right:28px;bottom:28px}
 .c-hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:right center}
 @media (max-width:860px){.c-hero-img{opacity:0.45}}
+.start-hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.start-fade{position:absolute;inset:0;background:linear-gradient(90deg,#0A1530 0%,rgba(10,21,48,0.92) 34%,rgba(10,21,48,0.55) 60%,rgba(10,21,48,0.25) 100%)}
+@media (max-width:860px){.start-fade{background:rgba(10,21,48,0.82)}}
 .field{display:flex;flex-direction:column;gap:10px}
 .field label,.legend{font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#101C3C}
 .field input,.field select,.field textarea{font-family:'Poppins',sans-serif;font-size:15px;font-weight:300;color:#1A1F2B;background:#FFFFFF;border:1px solid #CFC2A6;border-radius:0;padding:15px 16px;min-height:52px;width:100%}
