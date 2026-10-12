@@ -603,7 +603,7 @@ function embedBox(code, height, headingHtml, title, id) {
     ? code
     : `<iframe src="${esc(code)}" title="${esc(title)}" loading="lazy" style="width:100%;height:${height}px;border:0;display:block;background:#FFFFFF"></iframe>
 <p class="body" style="margin-top:16px;font-size:13px;color:#5A5F6E">Form not loading? <a href="${esc(code)}" target="_blank" rel="noopener" style="color:#8A5A1C">Open it in a new tab</a>.</p>`;
-  return `<div id="${id}" class="inquiry embed-box" style="flex:2 1 560px;min-width:0;background:#FFFFFF;border:1px solid #E4D9C2;padding:48px 44px;scroll-margin-top:24px">
+  return `<div id="${id}" class="inquiry embed-box" style="flex:2 1 560px;min-width:0;background:#FFFFFF;border:1px solid #E4D9C2;padding:44px 36px;scroll-margin-top:24px">
 ${headingHtml ? headingHtml.replace('<div>', '<div style="margin-bottom:24px">') : ''}
 ${code.startsWith('<') ? inner : inner}
 </div>`;
@@ -709,7 +709,7 @@ ${consentLine}
 ${ticker(T.ticker)}
 ${heroBlock(T.hero)}
 
-<section class="wrap" style="padding-top:72px;padding-bottom:130px;max-width:1000px">
+<section class="wrap" style="padding-top:72px;padding-bottom:130px">
 ${formBlock}
 
 </section>`;
