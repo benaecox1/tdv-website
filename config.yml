@@ -1,0 +1,461 @@
+# TDV website dashboard settings
+backend:
+  name: github
+  repo: benaecox1/tdv-website
+  branch: main
+  commit_messages:
+    update: "Update {{slug}} from the dashboard"
+    uploadMedia: "Upload {{path}}"
+    deleteMedia: "Delete {{path}}"
+
+# lets the dashboard run on your own computer for testing (ignored online)
+local_backend: true
+
+site_url: /
+display_url: /
+logo_url: /images/logo-monogram-navy.png
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: Pages
+    description: Edit the words and photos on each page. Click Publish at the top when you're done, and the live site updates in about a minute.
+    editor:
+      preview: false
+    files:
+      # ---------------- HOME ----------------
+      - name: home
+        label: Home page
+        file: content/home.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - label: "Top section (header photo)"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: &headline "Tip: put *stars* around words to make them gold italic, like: The vision is yours. *The weight doesn't have to be.*"}
+              - {label: "Intro paragraph", name: text, widget: text}
+              - {label: "Gold button text", name: button, widget: string}
+              - {label: "Outline button text", name: button_2, widget: string}
+              - {label: "Scripture", name: scripture, widget: string, required: false}
+              - {label: "Scripture reference", name: scripture_ref, widget: string, required: false}
+              - {label: "Header photo", name: image, widget: image, hint: "A photo with space on the left works best. Your face should sit right of center."}
+              - {label: "Photo description (for screen readers and Google)", name: image_alt, widget: string}
+              - {label: "Photo caption, line 1", name: caption, widget: string}
+              - {label: "Photo caption, line 2", name: caption_2, widget: string}
+              - {label: "Top-right corner label", name: corner_label, widget: string}
+          - {label: "Running line under the header (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "The founder we serve"
+            name: founder
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Big quote", name: quote, widget: text}
+              - {label: "Paragraph", name: text, widget: text}
+          - label: "Sound familiar? (questions + photo)"
+            name: familiar
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Photo", name: image, widget: image}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Questions", name: questions, widget: list, field: {label: Question, name: question, widget: string}}
+          - label: "The gap we close (before and after)"
+            name: gap
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Before box", name: before, widget: string, hint: "Stars make words italic here."}
+              - {label: "After box", name: after, widget: string, hint: *headline}
+          - {label: "First word of the services running line", name: services_ticker_label, widget: string, hint: "The rest of that line uses the short names from the Services page."}
+          - label: "How we help (services list + photo)"
+            name: help
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Photo", name: image, widget: image, hint: "The list of services comes from the Services page automatically."}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Label on the photo", name: image_label, widget: string, required: false}
+          - label: "The production schedule (3 steps)"
+            name: schedule
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - label: "Steps"
+                name: steps
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Stage label", name: stage, widget: string}
+                  - {label: "Title", name: title, widget: string}
+                  - {label: "Text", name: text, widget: text}
+                  - {label: "Bottom tags", name: tags, widget: string, required: false}
+          - label: "Director's note (desk photo + credits)"
+            name: note
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Gold button text", name: button, widget: string}
+              - {label: "Outline button text", name: button_2, widget: string}
+              - {label: "Photo", name: image, widget: image}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Label on the photo", name: image_label, widget: string, required: false}
+              - label: "Credits"
+                name: credits
+                widget: list
+                summary: "{{fields.role}}: {{fields.name}}"
+                fields:
+                  - {label: "Role", name: role, widget: string}
+                  - {label: "Name", name: name, widget: string}
+          - label: "Client review"
+            name: review
+            widget: object
+            hint: "Only real client words. Turn on 'Show' once you have one."
+            fields:
+              - {label: "Show this section", name: show, widget: boolean, default: false}
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Client quote", name: quote, widget: text, required: false}
+              - {label: "Client name", name: name, widget: string, required: false}
+              - {label: "Business name", name: business, widget: string, required: false}
+          - label: "Scripture band"
+            name: scripture
+            widget: object
+            fields:
+              - {label: "Scripture", name: quote, widget: text}
+              - {label: "Reference", name: ref, widget: string}
+          - label: "Closing section"
+            name: closing
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Button text", name: button, widget: string}
+
+      # ---------------- SERVICES ----------------
+      - name: services
+        label: Services page
+        file: content/services.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - {label: "Running line at the top (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "Top section"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Navy panel label", name: panel_label, widget: string}
+              - {label: "Shot list", name: shot_list, widget: list, field: {label: Step, name: step, widget: string}}
+              - {label: "Note under the shot list", name: panel_note, widget: string}
+          - {label: "Label above the services", name: lineup_label, widget: string}
+          - label: "Services"
+            name: services
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "These also feed the Home page list and the Contact form checkboxes. Drag to reorder."
+            fields:
+              - {label: "Service name", name: title, widget: string}
+              - {label: "Short name (for the running line on Home)", name: short_name, widget: string}
+              - {label: "Description", name: text, widget: text}
+              - {label: "What this can include", name: includes, widget: list, field: {label: Item, name: item, widget: string}}
+              - {label: "Highlight in navy", name: featured, widget: boolean, default: false}
+              - {label: "Highlight label (e.g. Most hands-on)", name: featured_label, widget: string, required: false}
+          - label: "Investment"
+            name: investment
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Button text", name: button, widget: string}
+          - label: "The production schedule (4 steps)"
+            name: process
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - label: "Steps"
+                name: steps
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Title", name: title, widget: string}
+                  - {label: "Text", name: text, widget: text}
+          - label: "Questions (FAQ)"
+            name: faq
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - label: "Questions"
+                name: items
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - {label: "Question", name: question, widget: string}
+                  - {label: "Answer", name: answer, widget: text}
+          - label: "Closing section"
+            name: closing
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Button text", name: button, widget: string}
+
+      # ---------------- ABOUT ----------------
+      - name: about
+        label: About page
+        file: content/about.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - label: "Top section"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Photo", name: image, widget: image, hint: "A tall or square photo works best."}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Top-right corner label", name: corner_label, widget: string}
+              - {label: "Caption on the photo", name: caption, widget: string}
+          - {label: "Running line (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "The story"
+            name: story
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Pull quote", name: quote, widget: string, required: false}
+              - {label: "Photo", name: image, widget: image}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Label on the photo", name: image_label, widget: string, required: false}
+              - {label: "First paragraph (larger)", name: lead, widget: text}
+              - {label: "Paragraphs", name: paragraphs, widget: list, field: {label: Paragraph, name: paragraph, widget: text}}
+          - label: "The mission"
+            name: mission
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Mission statement", name: statement, widget: text}
+              - label: "Points"
+                name: points
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - {label: "Label", name: label, widget: string}
+                  - {label: "Text", name: text, widget: text}
+          - label: "Core beliefs"
+            name: beliefs
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Intro", name: intro, widget: text}
+              - label: "Beliefs"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Belief", name: title, widget: string}
+                  - {label: "Explanation", name: text, widget: text}
+          - label: "Director's note (founder)"
+            name: founder
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Name", name: name, widget: string}
+              - {label: "Title", name: title, widget: string}
+              - {label: "Photo", name: image, widget: image}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Label on the photo", name: image_label, widget: string, required: false}
+              - {label: "Quote", name: quote, widget: text, required: false}
+              - {label: "Paragraphs", name: paragraphs, widget: list, hint: "Add a personal paragraph here: family, faith, Nashville, coffee.", field: {label: Paragraph, name: paragraph, widget: text}}
+          - label: "Cast & crew"
+            name: crew
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - label: "Credits"
+                name: credits
+                widget: list
+                summary: "{{fields.role}}: {{fields.name}}"
+                hint: "Add team members here as they join. Stars make a name italic."
+                fields:
+                  - {label: "Role", name: role, widget: string}
+                  - {label: "Name", name: name, widget: string}
+                  - {label: "Note under the name", name: note, widget: string, required: false}
+              - {label: "Gold button text", name: button, widget: string}
+              - {label: "Outline button text (emails you)", name: button_2, widget: string, required: false}
+          - label: "How we show up"
+            name: traits
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - label: "Traits"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Trait", name: title, widget: string}
+                  - {label: "Text", name: text, widget: string}
+          - label: "Closing section"
+            name: closing
+            widget: object
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Button text", name: button, widget: string}
+
+      # ---------------- START THE CONVERSATION ----------------
+      - name: start
+        label: Start the conversation page
+        file: content/start.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - {label: "Running line at the top (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "Top section"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Show the booking status line", name: show_status, widget: boolean, default: false}
+              - {label: "Booking status line", name: status, widget: string, required: false}
+              - {label: "Scripture", name: scripture, widget: text, required: false}
+              - {label: "Scripture reference", name: scripture_ref, widget: string, required: false}
+              - {label: "Background photo", name: image, widget: image, hint: "A wide photo works best. The left side gets darkened so the words stay readable."}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Top-right corner label", name: corner_label, widget: string}
+          - label: "Form box"
+            name: form
+            widget: object
+            hint: "Your discovery call form goes in Site settings > Discovery call form. The backup fields below are only used if that box is empty."
+            fields:
+              - {label: "Small label", name: label, widget: string, required: false}
+              - {label: "Heading", name: heading, widget: string, required: false, hint: "Stars make words gold italic. Leave empty to hide."}
+              - {label: "Backup form: 'How long in business' choices", name: stage_options, widget: list, field: {label: Choice, name: choice, widget: string}}
+              - {label: "Backup form: extra checkbox after the services", name: extra_interest, widget: string}
+              - {label: "Backup form: hint inside the big text box", name: heavy_placeholder, widget: string}
+              - {label: "Backup form: 'How did you hear about us' choices", name: heard_options, widget: list, field: {label: Choice, name: choice, widget: string}}
+              - {label: "Backup form: button text", name: button, widget: string}
+
+      # ---------------- CONTACT ----------------
+      - name: contact
+        label: Contact page (general questions)
+        file: content/contact.json
+        fields:
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - {label: "Running line at the top (words)", name: ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - label: "Top section"
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - {label: "Small label", name: label, widget: string}
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+              - {label: "Show the booking status line", name: show_status, widget: boolean, default: false}
+              - {label: "Booking status line", name: status, widget: string, required: false}
+              - {label: "Scripture", name: scripture, widget: text, required: false}
+              - {label: "Scripture reference", name: scripture_ref, widget: string, required: false}
+              - {label: "Background photo", name: image, widget: image, hint: "A wide photo works best. The left side gets darkened so the words stay readable."}
+              - {label: "Photo description", name: image_alt, widget: string}
+              - {label: "Top-right corner label", name: corner_label, widget: string}
+          - label: "Message form"
+            name: form
+            widget: object
+            hint: "If you add your HoneyBook contact form in Site settings, it replaces this form. The label and heading still show above it."
+            fields:
+              - {label: "Small label", name: label, widget: string, required: false}
+              - {label: "Heading", name: heading, widget: string, required: false, hint: "Stars make words gold italic. Leave empty to hide."}
+              - {label: "'What's this about?' choices", name: topics, widget: list, hint: "Remove them all to hide this question.", field: {label: Choice, name: choice, widget: string}}
+              - {label: "Hint inside the message box", name: message_placeholder, widget: string, required: false}
+              - {label: "Button text", name: button, widget: string}
+          - label: "Navy panel"
+            name: panel
+            widget: object
+            fields:
+              - {label: "Label", name: book_label, widget: string}
+              - {label: "Short note", name: book_text, widget: text, required: false}
+              - {label: "Button text (goes to Start the conversation page)", name: book_button, widget: string}
+          - label: "Thank-you page (after someone sends a form)"
+            name: thanks
+            widget: object
+            fields:
+              - {label: "Headline", name: headline, widget: string, hint: *headline}
+              - {label: "Paragraph", name: text, widget: text}
+
+  - name: legal
+    label: Legal pages
+    editor:
+      preview: false
+    files:
+      - name: privacy
+        label: Privacy Policy
+        file: content/privacy.md
+        fields: &legalfields
+          - {label: "Browser tab title", name: seo_title, widget: string}
+          - {label: "Page title", name: title, widget: string, hint: *headline}
+          - {label: "Subtitle", name: subtitle, widget: string}
+          - {label: "Effective date", name: effective_date, widget: string, hint: "Example: November 1, 2026"}
+          - {label: "Intro line", name: intro, widget: text}
+          - {label: "Policy text", name: body, widget: markdown, buttons: [bold, italic, link, heading-two, bulleted-list, numbered-list], editor_components: [], hint: "Each Heading 2 becomes a numbered section and a link in the side menu. Type {email} or {mailing_address} to pull them from Site settings."}
+      - name: terms
+        label: Terms & Conditions
+        file: content/terms.md
+        fields: *legalfields
+
+  - name: settings
+    label: Site settings
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: Contact info, links & logos
+        file: content/settings.json
+        fields:
+          - {label: "Business email", name: email, widget: string, required: false, hint: "Shows in the footer, Contact page, and legal pages."}
+          - {label: "Discovery call link", name: calendar_link, widget: string, required: false, hint: "Your HoneyBook discovery call form link. Every 'Start the conversation' and booking button goes straight here. Leave empty to use the Start the conversation page on your site instead."}
+          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Only used if 'Discovery call link' above is empty. Shows your form on the Start the conversation page."}
+          - {label: "Form height in pixels (link only)", name: discovery_form_height, widget: string, required: false, hint: "Only used with a link. Default is 1100. Make it bigger if your form gets cut off, smaller if there's empty space."}
+          - {label: "General contact form (link or embed code)", name: contact_form, widget: text, required: false, hint: "Your HoneyBook contact form. Paste its link or embed code. It shows on the Contact page. Leave empty to use the built-in message form."}
+          - {label: "Contact form height in pixels (link only)", name: contact_form_height, widget: string, required: false, hint: "Only used with a link. Default is 900."}
+          - {label: "Reply time in business days", name: reply_days, widget: string, required: false, hint: "Just the number, like 2. Leave empty to hide the line."}
+          - {label: "Instagram link", name: instagram, widget: string, required: false}
+          - {label: "LinkedIn link", name: linkedin, widget: string, required: false}
+          - {label: "City line", name: location, widget: string}
+          - {label: "Line under the city", name: location_note, widget: string}
+          - {label: "Mailing address (legal pages)", name: mailing_address, widget: string, required: false}
+          - {label: "Footer tagline", name: footer_tagline, widget: string}
+          - {label: "Footer values line", name: footer_values, widget: string}
+          - {label: "Footer running line (words)", name: footer_ticker, widget: list, field: {label: Word, name: word, widget: string}}
+          - {label: "Header button text", name: header_button, widget: string}
+          - {label: "Google description (1 to 2 sentences)", name: seo_description, widget: text}
+          - {label: "Business name", name: site_name, widget: string}
+          - {label: "Legal name (footer)", name: legal_name, widget: string}
+          - {label: "Header logo", name: logo, widget: image}
+          - {label: "Monogram (gold, for navy areas)", name: monogram, widget: image}
+          - {label: "Monogram (navy, for light areas)", name: monogram_dark, widget: image}

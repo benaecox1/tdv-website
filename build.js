@@ -103,6 +103,7 @@ const START = json('start.json');
 const services = list(SERV.services);
 
 const emailText = S.email || '[your email]';
+const startHref = String(S.calendar_link || '').trim() || '/start/';
 const emailHref = S.email ? `mailto:${S.email}` : '/contact/';
 const ext = (u) => (/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '');
 
@@ -136,7 +137,7 @@ function layout({ key, title, description, body, bodyClass }) {
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
 <nav class="nav" id="main-nav" aria-label="Main">
 ${nav}
-<a href="/start/" class="btn btn-gold"${key === 'start' ? ' aria-current="page"' : ''}>${esc(S.header_button)}</a>
+<a href="${esc(startHref)}" class="btn btn-gold"${key === 'start' ? ' aria-current="page"' : ''}>${esc(S.header_button)}</a>
 </nav>
 </div>
 </header>
@@ -227,7 +228,7 @@ ${scene('01', H.hero.label, true)}
 <h1 class="h1" style="color:#FFFFDB;font-size:clamp(42px,4.8vw,72px)">${acc(H.hero.headline)}</h1>
 <p class="lead light-text" style="margin-top:22px;max-width:480px;font-size:17px;line-height:1.75">${txt(H.hero.text)}</p>
 <div class="btn-row" style="margin-top:30px">
-<a href="/start/" class="btn btn-gold">${esc(H.hero.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-gold">${esc(H.hero.button)}</a>
 <a href="/services/" class="btn btn-line-light">${esc(H.hero.button_2)}</a>
 </div>
 ${H.hero.scripture ? `<p style="margin:32px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px"><span class="serif" style="font-style:italic;font-size:22px;color:#FFFFDB">${esc(H.hero.scripture)}</span><span class="slate" style="color:#E1BC7A">${esc(H.hero.scripture_ref)}</span></p>` : ''}
@@ -357,7 +358,7 @@ ${review}
 ${scene('', H.closing.label, false, true)}
 <h2 class="h2">${acc(H.closing.headline)}</h2>
 <p class="lead" style="margin:28px auto 0;max-width:620px">${txt(H.closing.text)}</p>
-<a href="/start/" class="btn btn-navy" style="margin-top:44px">${esc(H.closing.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-navy" style="margin-top:44px">${esc(H.closing.button)}</a>
 </section>`;
   return layout({ key: 'home', title: H.seo_title, body });
 }
@@ -373,7 +374,7 @@ ${f ? vf('', 'top:18px;left:18px;right:18px;bottom:18px') : ''}
 ${f && s.featured_label ? `<p class="eyebrow light" style="margin-bottom:12px">${esc(s.featured_label)}</p>` : ''}
 <h2 class="h3">${esc(s.title)}</h2>
 <p class="body" style="margin-top:14px">${txt(s.text)}</p>
-<a href="/start/" class="textlink" style="margin-top:18px">Inquire about this <span aria-hidden="true">&#8594;</span></a>
+<a href="${esc(startHref)}" class="textlink" style="margin-top:18px">Inquire about this <span aria-hidden="true">&#8594;</span></a>
 </div>
 <div style="flex:2 1 320px;min-width:0">
 ${list(s.includes).length ? `<p class="mini">What this can include</p><ul class="list">${list(s.includes).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
@@ -409,7 +410,7 @@ ${scene('', V.investment.label)}
 </div>
 <div style="flex:1 1 400px;min-width:0">
 <p class="lead">${txt(V.investment.text)}</p>
-<a href="/start/" class="btn btn-navy" style="margin-top:36px">${esc(V.investment.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-navy" style="margin-top:36px">${esc(V.investment.button)}</a>
 </div>
 </div>
 </section>
@@ -437,7 +438,7 @@ ${list(V.faq.items).map((q, i) => `<details class="faq"${i === 0 ? ' open' : ''}
 ${scene('', V.closing.label, true, true)}
 <h2 class="h2" style="color:#FFFFDB">${acc(V.closing.headline)}</h2>
 <p class="lead light-text" style="margin:28px auto 0;max-width:600px">${txt(V.closing.text)}</p>
-<a href="/start/" class="btn btn-gold" style="margin-top:44px">${esc(V.closing.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-gold" style="margin-top:44px">${esc(V.closing.button)}</a>
 </div>
 </section>`;
   return layout({ key: 'services', title: V.seo_title, body });
@@ -533,7 +534,7 @@ ${scene('', A.crew.label, true, true)}
 ${list(A.crew.credits).map((c) => `<div><p class="credit-l">${esc(c.role)}</p><p class="credit-n">${acc(c.name, 'acc-plain')}</p>${c.note ? `<p class="credit-s">${esc(c.note)}</p>` : ''}</div>`).join('\n')}
 </div>
 <div class="btn-row" style="justify-content:center;margin-top:80px">
-<a href="/start/" class="btn btn-gold">${esc(A.crew.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-gold">${esc(A.crew.button)}</a>
 ${A.crew.button_2 ? `<a href="${esc(emailHref)}" class="btn btn-line-light">${esc(A.crew.button_2)}</a>` : ''}
 </div>
 </div>
@@ -556,7 +557,7 @@ ${list(A.traits.items).map((t) => `<div class="trait"><h3 class="h3" style="colo
 <img src="${img(S.monogram_dark)}" alt="" aria-hidden="true" style="width:54px;height:auto;display:block;margin:0 auto 32px">
 ${scene('', A.closing.label, false, true)}
 <h2 class="h2">${acc(A.closing.headline)}</h2>
-<a href="/start/" class="btn btn-navy" style="margin-top:44px">${esc(A.closing.button)}</a>
+<a href="${esc(startHref)}" class="btn btn-navy" style="margin-top:44px">${esc(A.closing.button)}</a>
 </div>
 </section>`;
   return layout({ key: 'about', title: A.seo_title, body });
@@ -650,7 +651,7 @@ ${vf()}
 <div>
 <p class="eyebrow light" style="margin-bottom:12px">${esc(P.book_label)}</p>
 ${P.book_text ? `<p class="body light-text" style="margin-bottom:20px">${txt(P.book_text)}</p>` : ''}
-<a href="/start/" class="btn btn-gold" style="width:100%">${esc(P.book_button)}</a>
+<a href="${esc(startHref)}" class="btn btn-gold" style="width:100%">${esc(P.book_button)}</a>
 </div>
 ${reachUs()}
 </aside>
@@ -795,7 +796,9 @@ write('index.html', homePage());
 write('services/index.html', servicesPage());
 write('about/index.html', aboutPage());
 write('contact/index.html', contactPage());
-write('start/index.html', startPage());
+write('start/index.html', startHref !== '/start/'
+  ? `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Start the conversation | ${esc(S.site_name)}</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=${esc(startHref)}"><script>location.replace(${JSON.stringify(startHref)})</script></head><body><p>Taking you to our discovery call form. <a href="${esc(startHref)}">Click here if nothing happens</a>.</p></body></html>`
+  : startPage());
 write('thank-you/index.html', thanksPage());
 write('privacy/index.html', legalPage('privacy', 'privacy.md'));
 write('terms/index.html', legalPage('terms', 'terms.md'));
