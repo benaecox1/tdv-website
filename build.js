@@ -567,29 +567,23 @@ function contactPage() {
   const C = CONT;
   const opts = (a) => list(a).map((o) => `<option>${esc(o)}</option>`).join('');
   const interests = [...services.map((s) => s.title), C.form.extra_interest].filter(Boolean);
-  const body = `
-${ticker(C.ticker)}
-<section class="c-hero on-dark" style="position:relative;overflow:hidden;background:#0A1530;min-height:440px;display:flex;align-items:center">
-<img src="${img(C.hero.image)}" alt="${esc(C.hero.image_alt)}" class="c-hero-img">
-${vf()}
-<p class="slate rec slate-corner" aria-hidden="true" style="position:absolute;top:52px;left:56px">Rec</p>
-<p class="slate slate-corner" aria-hidden="true" style="position:absolute;top:52px;right:56px">${esc(C.hero.corner_label)}</p>
-<div class="wrap" style="position:relative;width:100%;padding-top:84px;padding-bottom:64px">
-<div style="max-width:640px">
-${scene('', C.hero.label, true)}
-<h1 class="h1" style="color:#FFFFDB;font-size:clamp(40px,4.4vw,64px);line-height:1.02">${acc(C.hero.headline)}</h1>
-<p class="lead" style="margin-top:18px;max-width:540px;color:#D8DDE8;font-size:17px;line-height:1.7">${txt(C.hero.text)}</p>
-${C.hero.show_status && C.hero.status ? `<p style="margin:18px 0 0;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#AEB5C6"><span style="width:8px;height:8px;border-radius:50%;background:#F8C540;display:inline-block"></span>${esc(C.hero.status)}</p>` : ''}
-${C.hero.scripture ? `<div style="margin-top:26px;padding-left:22px;border-left:1px solid #C99A56;max-width:520px">
-<p class="serif" style="margin:0;font-style:italic;font-size:21px;line-height:1.4;color:#FFFFDB">${esc(C.hero.scripture)}</p>
-<p style="margin:12px 0 0;font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:#E1BC7A">${esc(C.hero.scripture_ref)}</p>
-</div>` : ''}
-</div>
-</div>
-</section>
-
-<section class="wrap" style="padding-top:72px;padding-bottom:130px;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
-<form id="inquiry" class="inquiry" name="inquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company-url" style="flex:2 1 560px;min-width:0;background:#FFFFFF;border:1px solid #E4D9C2;padding:56px 52px;display:flex;flex-direction:column;gap:28px;scroll-margin-top:24px">
+  const embed = String(S.discovery_form || '').trim();
+  const embedHeight = parseInt(S.discovery_form_height, 10) || 1100;
+  const embedLabel = C.form.embed_label === undefined ? 'Discovery call form' : C.form.embed_label;
+  const embedHeading = C.form.embed_heading === undefined ? 'Tell us where things *stand.*' : C.form.embed_heading;
+  let formBlock;
+  if (embed) {
+    const isCode = embed.startsWith('<');
+    const inner = isCode
+      ? embed
+      : `<iframe src="${esc(embed)}" title="Discovery call form" loading="lazy" style="width:100%;height:${embedHeight}px;border:0;display:block;background:#FFFFFF"></iframe>
+<p class="body" style="margin-top:16px;font-size:13px;color:#5A5F6E">Form not loading? <a href="${esc(embed)}" target="_blank" rel="noopener" style="color:#8A5A1C">Open it in a new tab</a>.</p>`;
+    formBlock = `<div id="inquiry" class="inquiry embed-box" style="flex:2 1 560px;min-width:0;background:#FFFFFF;border:1px solid #E4D9C2;padding:48px 44px;scroll-margin-top:24px">
+${embedHeading ? `<p class="eyebrow" style="margin-bottom:10px">${esc(embedLabel)}</p><h2 class="h3" style="font-size:30px;margin-bottom:24px">${acc(embedHeading)}</h2>` : ''}
+${inner}
+</div>`;
+  } else {
+    formBlock = `<form id="inquiry" class="inquiry" name="inquiry" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company-url" style="flex:2 1 560px;min-width:0;background:#FFFFFF;border:1px solid #E4D9C2;padding:56px 52px;display:flex;flex-direction:column;gap:28px;scroll-margin-top:24px">
 <input type="hidden" name="form-name" value="inquiry">
 <p class="hidden"><label>Leave this empty: <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
@@ -619,7 +613,31 @@ ${interests.map((t) => `<label class="check"><input type="checkbox" name="intere
 ${S.reply_days ? `<p class="body" style="font-size:13px;color:#5A5F6E">We'll reply within ${esc(S.reply_days)} business day${String(S.reply_days).trim() === '1' ? '' : 's'}.</p>` : ''}
 <p class="body" style="flex-basis:100%;font-size:12px;color:#5A5F6E">By submitting, you agree to our <a href="/privacy/" style="color:#8A5A1C">Privacy Policy</a>.</p>
 </div>
-</form>
+</form>`;
+  }
+  const body = `
+${ticker(C.ticker)}
+<section class="c-hero on-dark" style="position:relative;overflow:hidden;background:#0A1530;min-height:440px;display:flex;align-items:center">
+<img src="${img(C.hero.image)}" alt="${esc(C.hero.image_alt)}" class="c-hero-img">
+${vf()}
+<p class="slate rec slate-corner" aria-hidden="true" style="position:absolute;top:52px;left:56px">Rec</p>
+<p class="slate slate-corner" aria-hidden="true" style="position:absolute;top:52px;right:56px">${esc(C.hero.corner_label)}</p>
+<div class="wrap" style="position:relative;width:100%;padding-top:84px;padding-bottom:64px">
+<div style="max-width:640px">
+${scene('', C.hero.label, true)}
+<h1 class="h1" style="color:#FFFFDB;font-size:clamp(40px,4.4vw,64px);line-height:1.02">${acc(C.hero.headline)}</h1>
+<p class="lead" style="margin-top:18px;max-width:540px;color:#D8DDE8;font-size:17px;line-height:1.7">${txt(C.hero.text)}</p>
+${C.hero.show_status && C.hero.status ? `<p style="margin:18px 0 0;display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#AEB5C6"><span style="width:8px;height:8px;border-radius:50%;background:#F8C540;display:inline-block"></span>${esc(C.hero.status)}</p>` : ''}
+${C.hero.scripture ? `<div style="margin-top:26px;padding-left:22px;border-left:1px solid #C99A56;max-width:520px">
+<p class="serif" style="margin:0;font-style:italic;font-size:21px;line-height:1.4;color:#FFFFDB">${esc(C.hero.scripture)}</p>
+<p style="margin:12px 0 0;font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:#E1BC7A">${esc(C.hero.scripture_ref)}</p>
+</div>` : ''}
+</div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:72px;padding-bottom:130px;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+${formBlock}
 
 <aside class="side" style="flex:1 1 320px;min-width:0;background:#101C3C;padding:60px 48px;display:flex;flex-direction:column;gap:40px;position:relative">
 ${vf()}
