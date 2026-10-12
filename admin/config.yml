@@ -438,7 +438,8 @@ collections:
         file: content/settings.json
         fields:
           - {label: "Business email", name: email, widget: string, required: false, hint: "Shows in the footer, Contact page, and legal pages."}
-          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Paste your form's share link, or the embed code your form tool gives you. It shows on the Start the conversation page. Leave empty to use the built-in form."}
+          - {label: "Discovery call link", name: calendar_link, widget: string, required: false, hint: "Your HoneyBook discovery call form link. Every 'Start the conversation' and booking button goes straight here. Leave empty to use the Start the conversation page on your site instead."}
+          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Only used if 'Discovery call link' above is empty. Shows your form on the Start the conversation page."}
           - {label: "Form height in pixels (link only)", name: discovery_form_height, widget: string, required: false, hint: "Only used with a link. Default is 1100. Make it bigger if your form gets cut off, smaller if there's empty space."}
           - {label: "General contact form (link or embed code)", name: contact_form, widget: text, required: false, hint: "Your HoneyBook contact form. Paste its link or embed code. It shows on the Contact page. Leave empty to use the built-in message form."}
           - {label: "Contact form height in pixels (link only)", name: contact_form_height, widget: string, required: false, hint: "Only used with a link. Default is 900."}
