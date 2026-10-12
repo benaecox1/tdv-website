@@ -359,6 +359,8 @@ collections:
               - {label: "Hint inside the big text box", name: heavy_placeholder, widget: string}
               - {label: "'How did you hear about us' choices", name: heard_options, widget: list, field: {label: Choice, name: choice, widget: string}}
               - {label: "Button text", name: button, widget: string}
+              - {label: "Small label above your embedded form", name: embed_label, widget: string, required: false, default: "Discovery call form"}
+              - {label: "Heading above your embedded form", name: embed_heading, widget: string, required: false, default: "Tell us where things *stand.*", hint: "Only shows when you use your own form. Stars make words gold italic. Leave empty to hide."}
           - label: "Navy panel"
             name: panel
             widget: object
@@ -404,6 +406,8 @@ collections:
         file: content/settings.json
         fields:
           - {label: "Business email", name: email, widget: string, required: false, hint: "Shows in the footer, Contact page, and legal pages."}
+          - {label: "Discovery call form (link or embed code)", name: discovery_form, widget: text, required: false, hint: "Paste your form's share link, or the embed code your form tool gives you. It replaces the form on the Contact page. Leave empty to use the built-in form."}
+          - {label: "Form height in pixels (link only)", name: discovery_form_height, widget: string, required: false, hint: "Only used with a link. Default is 1100. Make it bigger if your form gets cut off, smaller if there's empty space."}
           - {label: "Calendar booking link", name: calendar_link, widget: string, required: false, hint: "Paste your Calendly, HoneyBook, or Google booking link. Leave empty to send people to the form."}
           - {label: "Reply time in business days", name: reply_days, widget: string, required: false, hint: "Just the number, like 2. Leave empty to hide the line."}
           - {label: "Instagram link", name: instagram, widget: string, required: false}
